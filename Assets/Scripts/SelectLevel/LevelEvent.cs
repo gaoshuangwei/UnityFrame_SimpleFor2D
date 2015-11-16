@@ -14,6 +14,7 @@ public class LevelEvent : MonoBehaviour
         {
             //假设关卡的名称即为对应场景的名称
             Application.LoadLevel(2);
+            GameScene.levleNum = int.Parse(level.ID) + 1;
             Debug.Log("当前选择的关卡是:" + level.Name);
 
         }

@@ -16,6 +16,7 @@ public class GameScene : MonoBehaviour {
 	public static bool overShown = false;
 
 	public static int scoreNum = 0;
+    public static int levleNum = 1;
 
 	public static GameButtons gbs;
 

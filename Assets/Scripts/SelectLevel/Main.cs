@@ -24,11 +24,11 @@ public class Main : MonoBehaviour
         m_levels = LevelSystem.LoadLevels();
         //动态生成关卡
         int i = 0;
-        foreach (Level l in m_levels)
+        foreach (Level level in m_levels)
         {
             GameObject prefab = (GameObject)Instantiate((Resources.Load("Level") as GameObject));
             //数据绑定
-            DataBind(prefab, l);
+            DataBind(prefab, level);
             //设置父物体
             prefab.transform.SetParent(GameObject.Find("Canvas/Background/LevelPanel").transform);
 //            prefab.transform.localPosition = new Vector3(m_levels.Count/3*100+140, m_levels.Count%3*100-140, 0);
@@ -36,8 +36,8 @@ public class Main : MonoBehaviour
             i++;
             prefab.transform.localScale = Vector3.one;
             //将关卡信息传给关卡
-            prefab.GetComponent<LevelEvent>().level = l;
-            prefab.name = l.Name;
+            prefab.GetComponent<LevelEvent>().level = level;
+            prefab.name = level.Name;
         }
     }
 

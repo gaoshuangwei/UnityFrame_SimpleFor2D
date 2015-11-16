@@ -27,6 +27,7 @@ public class GameButtons : MonoBehaviour {
 	public Button GameOverButton;		// Game Over button from scene
 
 	public Text scoreText;				// Text to display score value, from scene
+    public Text levelText;
 	public Text bestText;				// Text to display best value, from scene
 
 	public GameObject PausedScreen;		// The gameObject that contains all the paused screen elements in the scene
@@ -50,6 +51,8 @@ public class GameButtons : MonoBehaviour {
 		// By default we disable the Paused/Over screen Ui, we'll show it when user clicks settings button
 		PausedScreen.SetActive(false);
 		OverScreen.SetActive(false);
+
+        levelText.text = "LEVEL:" + GameScene.levleNum;
 
 		// Get the previously store best score value and display on screen
 		int bestNum = PlayerPrefs.GetInt("best", 0);
