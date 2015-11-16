@@ -36,20 +36,20 @@ public static class LevelSystem
         List<Level> levels = new List<Level>();
         foreach (XmlElement xe in levelsNode)
         {
-            Level l = new Level();
-            l.ID = xe.GetAttribute("id");
-            l.Name = xe.GetAttribute("name"); 
+            Level level = new Level();
+            level.ID = xe.GetAttribute("id");
+            level.Name = xe.GetAttribute("name"); 
             //使用unlock属性来标识当前关卡是否解锁
             if (xe.GetAttribute("unlock") == "1")
             {
-                l.UnLock = true;
+                level.UnLock = true;
             }
             else
             {
-                l.UnLock = false;
+                level.UnLock = false;
             }
 
-            levels.Add(l);
+            levels.Add(level);
         }
 
         return levels;

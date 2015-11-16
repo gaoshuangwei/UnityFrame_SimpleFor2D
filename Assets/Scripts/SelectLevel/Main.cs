@@ -34,7 +34,7 @@ public class Main : MonoBehaviour
 //            prefab.transform.localPosition = new Vector3(m_levels.Count/3*100+140, m_levels.Count%3*100-140, 0);
             prefab.GetComponent<RectTransform>().localPosition = new Vector3(i%3*100-100,-i/3*100+100, 0);
             i++;
-            prefab.transform.localScale = new Vector3(1, 1, 1);
+            prefab.transform.localScale = Vector3.one;
             //将关卡信息传给关卡
             prefab.GetComponent<LevelEvent>().level = l;
             prefab.name = l.Name;
